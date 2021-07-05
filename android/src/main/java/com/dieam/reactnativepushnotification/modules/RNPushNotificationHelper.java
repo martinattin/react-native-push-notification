@@ -668,15 +668,9 @@ public class RNPushNotificationHelper {
             // So the strings 'my_sound.mp3' AND 'my_sound' are accepted
             // The reason is to make the iOS and android javascript interfaces compatible
 
-            int resId;
-            if (context.getResources().getIdentifier(soundName, "raw", context.getPackageName()) != 0) {
-                resId = context.getResources().getIdentifier(soundName, "raw", context.getPackageName());
-            } else {
-                soundName = soundName.substring(0, soundName.lastIndexOf('.'));
-                resId = context.getResources().getIdentifier(soundName, "raw", context.getPackageName());
-            }
+           
 
-            return Uri.parse("android.resource://" + context.getPackageName() + "/" + resId);
+            return Uri.parse(soundName);
         }
     }
 
