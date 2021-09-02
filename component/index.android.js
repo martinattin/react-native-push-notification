@@ -141,6 +141,13 @@ NotificationsComponent.prototype.getScheduledLocalNotifications = function(callb
 NotificationsComponent.prototype.removeDeliveredNotifications = function(identifiers) {
   RNPushNotification.removeDeliveredNotifications(identifiers);
 }
+NotificationsComponent.prototype.removeDeliveredNotificationsBasedOnTags =
+  function (identifiers, tag) {
+    RNPushNotification.removeDeliveredNotificationsBasedOnTags(
+      identifiers,
+      tag,
+    );
+  };
 
 NotificationsComponent.prototype.abandonPermissions = function() {
 	RNPushNotification.abandonPermissions();

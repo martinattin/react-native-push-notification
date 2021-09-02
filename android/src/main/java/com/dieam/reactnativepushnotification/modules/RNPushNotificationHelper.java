@@ -689,12 +689,12 @@ public class RNPushNotificationHelper {
         }
     }
 
-    public void clearDeliveredNotifications(ReadableArray identifiers) {
+    public void clearDeliveredNotifications(ReadableArray identifiers, String tagId) {
       NotificationManager notificationManager = notificationManager();
       for (int index = 0; index < identifiers.size(); index++) {
         String id = identifiers.getString(index);
-        Log.i(LOG_TAG, "Removing notification with id " + id);
-        notificationManager.cancel(Integer.parseInt(id));
+        Log.i(LOG_TAG, "Removing notification with id " + Integer.parseInt(id));
+        notificationManager.cancel(tagId,Integer.parseInt(id));
       }
     }
 

@@ -579,6 +579,10 @@ Notifications.removeDeliveredNotifications = function() {
   return this.callNative('removeDeliveredNotifications', arguments);
 }
 
+Notifications.removeDeliveredNotificationsBasedOnTags = function () {
+  return this.callNative('removeDeliveredNotificationsBasedOnTags', arguments);
+};
+
 Notifications.invokeApp = function() {
   return this.callNative('invokeApp', arguments);
 };

@@ -258,6 +258,11 @@ public class RNPushNotification extends ReactContextBaseJavaModule implements Ac
         callback.invoke(mRNPushNotificationHelper.getDeliveredNotifications());
     }
 
+     @ReactMethod
+     public void removeDeliveredNotificationsBasedOnTags(ReadableArray identifiers,String tagId) {
+      mRNPushNotificationHelper.clearDeliveredNotifications(identifiers, tagId);
+      }
+
     @ReactMethod
     /**
      * Returns a list of all currently scheduled notifications
